@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.name {
+    color: rgb(79, 77, 77)
+}
+
+.pokeImg {
+    width: 100px;
+    height: 100px;
+    padding: 2%;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: whitesmoke;
+    height: 60px;
+    margin-left: -90px;
+}
+.mat-mdc-cell, .mat-mdc-header-cell {
+    text-align: center;
+}

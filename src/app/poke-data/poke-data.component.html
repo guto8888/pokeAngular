@@ -1,0 +1,60 @@
+<div>
+    <p>
+        <mat-toolbar color="warn">
+          <span>Dados do {{PokeList.pokeInfo[0]?.name.toUpperCase()}} #{{id}}</span>
+          <span class="example-spacer"></span>
+          <button routerLink="/index" mat-fab class="home" aria-label="Example icon button with a home icon">
+            <mat-icon>home</mat-icon>
+          </button>
+        </mat-toolbar>
+      </p>
+</div>
+
+<table mat-table [dataSource]="PokeList.pokeInfo" matSort
+       class="mat-elevation-z8">
+  <ng-container matColumnDef="Aparencia">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      Aparência
+    </th>
+    <td mat-cell *matCellDef="let element"> 
+        <img src={{element.sprites.other.dream_world.front_default}} alt="pokeImg"></td>
+  </ng-container>
+  <ng-container matColumnDef="Nome">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Nome
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name.toUpperCase()}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Tipo">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+        Tipo
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.types[0].type.name.toUpperCase()}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Altura">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Altura
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.height /10 | number:'1.2-3'}} m </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Peso">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      Peso
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight | number:'1.2-3'}} KG </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Habilidades">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      Habilidades
+    </th>
+    <td mat-cell *matCellDef="let element"> <ul *ngFor="let hab of element.moves; let i = index">
+        <li *ngIf="i < 4">{{hab.move.name}}</li>
+    </ul></td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
