@@ -27,6 +27,10 @@ Clone o projeto
 ```
 
 ```bash
+  npm install
+```
+
+```bash
    ng serve
 ```
 
