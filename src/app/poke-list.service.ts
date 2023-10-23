@@ -24,7 +24,7 @@ export class PokeListService {
 
   dataSearch(id: string) {
     this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${id}`).subscribe((i) => {
-      this.pokeInfo = [...this.pokeInfo, i]
+      this.pokeInfo = [i]
    })
   }
 }
