@@ -5,3 +5,9 @@ html, body {
   width: 100%;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media (max-width: 385px) {
+    body, html {
+        width: 98vh;
+    }
+}
