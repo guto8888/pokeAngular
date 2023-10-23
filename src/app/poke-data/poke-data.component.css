@@ -32,3 +32,26 @@
     background-color: red;
     color: whitesmoke
   }
+
+  @media (max-width: 720px) {
+    
+    .mat-elevation-z8 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .hidden {
+      display: none;
+    }
+    th {
+      padding-right: 50px;
+    }
+    td {
+      padding-right: 20px;
+    }
+  .hiddenImg {
+    height: 100px;
+    width: 100px;
+  }
+}
